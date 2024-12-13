@@ -1,10 +1,12 @@
 # 📝 Defeat the Evil Wizard
 
+Defeat the Evil Wizard is a command-line RPG where you create and control your own hero character, such as a Warrior, Mage, or custom class, to battle the Evil Wizard. Using a simple menu system, players can perform actions like attacking, using special abilities, healing, and viewing stats.
+
 ---
 
 ## 📋 Overview
 
-Defeat the Evil Wizard is a command-line RPG where you create and control your own hero character, such as a Warrior, Mage, or custom class, to battle the Evil Wizard. Using a simple menu system, players can perform actions like attacking, using special abilities, healing, and viewing stats.
+pending
 
 ---
 
