@@ -4,7 +4,9 @@ import os
 import title_screen # ASCII art and logic for title screen
 import menus # Game main menu
 import map
-import battle
+# import battle
+import class_info
+
 
 # Main~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 os.system('cls') # Clear the junk off your screen
@@ -21,6 +23,4 @@ os.system('cls')
 map.map(player1.name) # Loads in the map from map.py
 
 os.system('cls')
-print('Time to fight the boss!')
-
-
+wizard1 = class_info.EvilWizard('evil mc evil pants')

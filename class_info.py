@@ -4,7 +4,7 @@ class Character:
         self.name = name
         self.health = health
         self.attack_power = attack_power
-        self.max_health = health  # Store the original health for maximum limit
+        self.max_health = health # Store the original health for maximum limit
 
     def attack(self, opponent):
         opponent.health -= self.attack_power

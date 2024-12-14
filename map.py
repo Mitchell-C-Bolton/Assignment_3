@@ -9,16 +9,16 @@ def map(name):
     active = True
     map = [ # Game map
      '██████████████████████████████████',
-     '█        █                 █   ጰ █',
-     '█        █        █              █',
-     '█                 █        ███████',
-     '█   █████████     █              █',
+     '█       █   █     █        █     █',
+     '█       █   ████  █    █████  ጰ  █',
      '█           █     █              █',
-     '█           █     ████████       █',
-     '█████   █   █                    █',
-     '█       █   ███████      █       █',
-     '█       █         █      █       █',
-     '█ 𓀠     █   █            █       █',
+     '█   █████████  ████        ███████',
+     '█           █     █              █',
+     '█           ████  ███████████    █',
+     '█████   █   █               █    █',
+     '█       █   ███████      █  █    █',
+     '█       █         █      █  █    █',
+     '█ 𓀠     █                █       █',
      '██████████████████████████████████'
     ]
 
@@ -107,23 +107,27 @@ def map(name):
             os.system('cls')
             active = up()
             print_map(name)
-            time.sleep(0.2) # Makes it so keys aren't being rapidly spammed at an ungodly fast rate
+            keyboard.write('\b' * 20)
+            time.sleep(0.15) # Makes it so keys aren't being rapidly spammed at an ungodly fast rate
             continue
         elif keyboard.is_pressed('a'):
             os.system('cls')
             active = left()
             print_map(name)
-            time.sleep(0.2)
+            keyboard.write('\b' * 20)
+            time.sleep(0.15)
             continue
         elif keyboard.is_pressed('s'):
             os.system('cls')
             active = down()
             print_map(name)
-            time.sleep(0.2)
+            keyboard.write('\b' * 20)
+            time.sleep(0.15)
             continue
         elif keyboard.is_pressed('d'):
             os.system('cls')
             active = right()
             print_map(name)
-            time.sleep(0.2)
+            keyboard.write('\b' * 20)
+            time.sleep(0.15)
             continue

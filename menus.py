@@ -36,8 +36,6 @@ def class_selection():
             return 3
         elif keyboard.is_pressed('4'):
             return 4
-        elif keyboard.read_event().event_type == keyboard.KEY_DOWN: #checks if any key outside of 1-4 was pressed
-            print('        please choose a class using 1-4')
 
 def name(class_selection): # Menu for setting your name 
     if class_selection == 1:
