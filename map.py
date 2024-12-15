@@ -1,5 +1,5 @@
 # Imports~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import keyboard
+import msvcrt
 import os
 import time
 
@@ -10,15 +10,15 @@ def map(name):
     map = [ # Game map
      '██████████████████████████████████',
      '█       █   █     █        █     █',
-     '█       █   ████  █    █████    █',
+     '█       █   ████  █    █████  ጰ  █',
      '█           █     █              █',
      '█   █████████  ████        ███████',
      '█           █     █              █',
      '█           ████  ███████████    █',
      '█████   █   █               █    █',
      '█       █   ███████      █  █    █',
-     '█ ጰ     █         █      █  █    █',
-     '█ 𓀠     █                █       █',
+     '█   ጰ   █         █      █  █    █',
+     '█   𓀠   █                █       █',
      '██████████████████████████████████'
     ]
 
@@ -52,82 +52,41 @@ def map(name):
                 if map[row_i][column_i] == '𓀠':
                     return(row_i, column_i)
 
-    def up(): # Move up
+    def move(row_dif, column_dif):
         row, column = current_position()
-        if map[row-1][column] == ' ':
-            temp_convert = list(map[row-1])
-            temp_convert[column] = '𓀠'
-            map[row-1] = ''.join(temp_convert) 
+        if map[row+row_dif][column+column_dif] == ' ':
+            temp_convert = list(map[row+row_dif])
+            temp_convert[column+column_dif] = '𓀠'
+            map[row+row_dif] = ''.join(temp_convert) 
             make_zero(row, column)
-        elif map[row-1][column] == '█':
+        elif map[row+row_dif][column+column_dif] == '█':
             pass
-        elif map[row-1][column] == 'ጰ':
-            return False
-
-    def right(): # Move right
-        row, column = current_position()
-        if map[row][column+1] == ' ':
-            temp_convert = list(map[row]) 
-            temp_convert[column+1] = '𓀠'
-            map[row] = ''.join(temp_convert)
-            make_zero(row, column)
-        elif map[row][column+1] == '█':
-            pass
-        elif map[row][column+1] == 'ጰ':
+        elif map[row+row_dif][column+column_dif] == 'ጰ':
+            time.sleep(0.15)
             return False
         
-    def down(): # Move down
-        row, column = current_position()
-        if map[row+1][column] == ' ':
-            temp_convert = list(map[row+1])
-            temp_convert[column] = '𓀠'
-            map[row+1] = ''.join(temp_convert)
-            make_zero(row, column)
-        elif map[row+1][column] == '█':
-            pass
-        elif map[row+1][column] == 'ጰ':
-            return False
-
-    def left(): # Move left
-        row, column = current_position()
-        if map[row][column-1] == ' ':
-            temp_convert = list(map[row])
-            temp_convert[column-1] = '𓀠'
-            map[row] = ''.join(temp_convert)
-            make_zero(row, column)
-        elif map[row][column-1] == '█':
-            pass
-        elif map[row][column-1] == 'ጰ':
-            return False
-            
     print_map(name)
     
     while active != False:
-        if keyboard.is_pressed('w'): 
+        direction = msvcrt.getch()
+        if direction == b'w': 
             os.system('cls')
-            active = up()
+            active = move(-1, 0)
             print_map(name)
-            keyboard.write('\b' * 20)
-            time.sleep(0.15) # Makes it so keys aren't being rapidly spammed at an ungodly fast rate
             continue
-        elif keyboard.is_pressed('a'):
+        elif direction == b'a':
             os.system('cls')
-            active = left()
+            active = move(0, -1)
             print_map(name)
-            keyboard.write('\b' * 20)
-            time.sleep(0.15)
             continue
-        elif keyboard.is_pressed('s'):
+        elif direction == b's':
             os.system('cls')
-            active = down()
+            active = move(1, 0)
             print_map(name)
-            keyboard.write('\b' * 20)
-            time.sleep(0.15)
             continue
-        elif keyboard.is_pressed('d'):
+        elif direction == b'd':
             os.system('cls')
-            active = right()
+            active = move(0, 1)
             print_map(name)
-            keyboard.write('\b' * 20)
-            time.sleep(0.15)
             continue
+

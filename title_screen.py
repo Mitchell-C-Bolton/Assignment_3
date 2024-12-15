@@ -1,9 +1,11 @@
 # Imports~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import keyboard
+import msvcrt
 
 # Main~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def print_title(): # ASCII art for the title screen
     print('''
+All art in this work is free use and authors have been creddited where possible
+
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ██▄   ▄███▄   ▄████  ▄███▄   ██     ▄▄▄▄▀        ▄▄▄▄▀ ▄  █ ▄███▄       ▄███▄      ▄   ▄█ █           ▄ ▄   ▄█  ▄▄▄▄▄▄   ██   █▄▄▄▄ ██▄  
     █  █  █▀   ▀  █▀   ▀ █▀   ▀  █ █ ▀▀▀ █        ▀▀▀ █   █   █ █▀   ▀      █▀   ▀      █  ██ █          █   █  ██ ▀   ▄▄▀   █ █  █  ▄▀ █  █ 
@@ -12,17 +14,8 @@ def print_title(): # ASCII art for the title screen
     ███▀  ▀███▀    █     ▀███▀      █  ▀            ▀        █  ▀███▀       ▀███▀    █  █   ▐     ▀      █ █ █   ▐              █   █   ███▀ 
     ~~~~~~~~~~~~~~~~▀~~~~~~~~~~~~~~█~~~~~~~~~~~~~~~~~~~~~~~~▀~~~~~~~~~~~~~~~~~~~~~~~~~█▐~~~~~~~~~~~~~~~~~~~▀~▀~~~~~~~~~~~~~~~~~█~~~▀~~~~~~~~~
                                 ▀                                                   ▐                                       ▀                
-                                                        Press any key to continue
-
-
-
-
-
-
-
-
-All art in this work is free use and authors have been creddited where possible''')
+                                                        Press any key to continue''')
     
-    keyboard.read_event() #waits for any key to be pressed before continuing
+    msvcrt.getch()  # This waits for a single key press (no enter required)
     # Credit for text generation goes to: http://patorjk.com/software/taag
 

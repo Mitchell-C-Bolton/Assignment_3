@@ -1,5 +1,5 @@
 # Imports~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import class_info
+import msvcrt
 import os
 import math
 import random
@@ -35,9 +35,10 @@ ______/_\___________________________________________\__\_____
    +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
    |                 Combat Log
    |
-   |  {wizard_log}
    |  {player_log}
+   |  {wizard_log}
    |
+   +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
     ''') # Battle ASCII credit goes to Mitchell Bolton (I made this one personally)
 
 def health_bar(max_health, health):
@@ -56,12 +57,12 @@ def battle(player, wizard):# Battle function with user menu for actions
     while wizard.health > 0 and player.health > 0:
         
         # Player attack phase
-        player_attack = input('Action: ')
-        if player_attack == '1':
+        player_attack = msvcrt.getch()
+        if player_attack == b'1':
             player_log = player.attack(wizard)
-        elif player_attack == '2':
+        elif player_attack == b'2':
             player_log = player.regenerate(10)
-        elif player_attack == '3':
+        elif player_attack == b'3':
             player_log = player.special(wizard)
         else:
             os.system('cls')

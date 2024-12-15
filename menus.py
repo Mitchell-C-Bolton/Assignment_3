@@ -1,5 +1,5 @@
 # Imports~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import keyboard
+import msvcrt
 import character_art
 import class_info
 
@@ -7,50 +7,54 @@ import class_info
 def class_selection():
     
     # ASCII for the class sellection screen
+    
     print('''
-        +-------Select your class------+
-        |                              |
-        |   1) ~~~~ Warrior ~~~~       |
-        |   A strong and mele fighter  |
-        |                              |
-        |   2) ~~~~~ Mage ~~~~~~       |
-        |   A master of arcane magic   |
-        |                              |
-        |   3) ~~~~~ Archer ~~~~       |
-        |   A ranged expert            |
-        |                              |
-        |   4) ~~~~~ Paladin ~~~       |
-        |   A holy knight              |
-        |                              |
-        +------------------------------+
-        
-        Press the coresponding numebr to select a class.
+            +-------Select your class------+
+            |                              |
+            |   1) ~~~~ Warrior ~~~~       |
+            |   A strong and mele fighter  |
+            |                              |
+            |   2) ~~~~~ Mage ~~~~~~       |
+            |   A master of arcane magic   |
+            |                              |
+            |   3) ~~~~~ Archer ~~~~       |
+            |   A ranged expert            |
+            |                              |
+            |   4) ~~~~~ Paladin ~~~       |
+            |   A holy knight              |
+            |                              |
+            +------------------------------+
+            
+      Press the coresponding numebr to select a class.
         ''')
     
-    while True: # Select a class logic
-        if keyboard.is_pressed('1'):
+    while True:
+        selection = msvcrt.getch() # gets a keyboard input and converts it into a byte string for class selection logic
+        if selection == b'1': # class selection logic 
             return 1
-        elif keyboard.is_pressed('2'):
+        elif selection == b'2':
             return 2
-        elif keyboard.is_pressed('3'):
+        elif selection == b'3':
             return 3
-        elif keyboard.is_pressed('4'):
+        elif selection == b'4':
             return 4
+        else:
+            print(f'{selection.decode()} is not a valid selection.') #.decode turns a byts into utf-8
 
-def name(class_selection): # Menu for setting your name 
-    if class_selection == 1:
+def name(char_name): # Menu for setting your name 
+    if char_name == 1:
         character_art.warior()
         name = input('Name your warrior: ')
         return class_info.Warrior(name)
-    elif class_selection == 2:
+    elif char_name == 2:
         character_art.mage()
         name = input('Name your mage: ')
         return class_info.Mage(name)
-    elif class_selection == 3:
+    elif char_name == 3:
         character_art.archer()
         name = input('Name your archer: ')
         return class_info.Archer(name)
-    elif class_selection == 4:
+    elif char_name == 4:
         character_art.paladin()
         name = input('Name your paladin: ')
         return class_info.Paladin(name)
