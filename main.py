@@ -4,7 +4,7 @@ import os
 import title_screen # ASCII art and logic for title screen
 import menus # Game main menu
 import map
-# import battle
+import battle
 import class_info
 
 
@@ -23,4 +23,11 @@ os.system('cls')
 map.map(player1.name) # Loads in the map from map.py
 
 os.system('cls')
-wizard1 = class_info.EvilWizard('evil mc evil pants')
+wizard1 = class_info.EvilWizard('Evil Wizard')
+win_loss =battle.battle(player1, wizard1)
+
+os.system('cls')
+if win_loss == True:
+    print('You beat the wizard!')
+else:
+    print('The wizard reigns supreme!')
