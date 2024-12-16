@@ -25,6 +25,7 @@ ______/_\___________________________________________\__\_____
    |  1) Attack
    |  2) Heal
    |  3) {player.special_name}
+   |  4) {player.special2_name}
    |
    +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
    |                 Evil Wizard
@@ -64,6 +65,8 @@ def battle(player, wizard):# Battle function with user menu for actions
             player_log = player.regenerate(10)
         elif player_attack == b'3':
             player_log = player.special(wizard)
+        elif player_attack == b'4':
+            player_log = player.special2(wizard)
         else:
             os.system('cls')
             print_battle(player, wizard, player_health_bar, wizard_health_bar, wizard_log, player_log)

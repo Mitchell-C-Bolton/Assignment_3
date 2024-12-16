@@ -70,23 +70,23 @@ def map(name):
     while active != False:
         direction = msvcrt.getch()
         if direction == b'w': 
-            os.system('cls')
             active = move(-1, 0)
+            os.system('cls')
             print_map(name)
             continue
         elif direction == b'a':
-            os.system('cls')
             active = move(0, -1)
+            os.system('cls')
             print_map(name)
             continue
         elif direction == b's':
-            os.system('cls')
             active = move(1, 0)
+            os.system('cls')
             print_map(name)
             continue
         elif direction == b'd':
-            os.system('cls')
             active = move(0, 1)
+            os.system('cls')
             print_map(name)
             continue
 
