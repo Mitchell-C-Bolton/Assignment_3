@@ -1,6 +1,6 @@
 # 📝 Defeat the Evil Wizard
 
-Defeat the Evil Wizard is a command-line RPG where you create and control your own hero character, such as a Warrior, Mage, or custom class, to battle the Evil Wizard. Using a simple menu system, players can perform actions like attacking, using special abilities, healing, and viewing stats.
+Defeat the Evil Wizard is a command-line RPG where you create and control your own hero character, such as a Warrior, Mage, or custom class, to battle the Evil Wizard. Using a simple menu system, players can perform actions like attacking, using special abilities, and healing.
 
 ## 🔧 Features
 
@@ -12,7 +12,7 @@ Defeat the Evil Wizard is a command-line RPG where you create and control your o
 
 ## 🛠️ Technologies Used
 
-- **Programming Language:** Python 3.x
+- **Programming Language:** Python 3
 - **Development Environment:** Visual Studio Code
 
 ---
