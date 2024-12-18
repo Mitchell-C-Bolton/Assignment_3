@@ -49,7 +49,7 @@ class Mage(Character):
         opponent.health -= (self.max_health - self.health)/5
         return f'{self.name} sharpens the blood from their wounds! Dealing {self.attack_power*3} dammage!'
     
-    def special2(self, opponent): # Deals dammage based on current health
+    def special2(self, opponent): # Fireball deals dammage based on current health
         opponent.health /= 1.25
         return f'{self.name} throws a fireball! Dealing {self.attack_power*3} dammage!'
     
