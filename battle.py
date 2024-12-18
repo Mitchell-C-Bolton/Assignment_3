@@ -70,7 +70,7 @@ def battle(player, wizard):# Battle function with user menu for actions
         else:
             os.system('cls')
             print_battle(player, wizard, player_health_bar, wizard_health_bar, wizard_log, player_log)
-            print(f'{player_attack} is Not a valid option.')
+            print(f'{player_attack.decode()} is Not a valid option.')
             print(f'Chose an action from your list of actions (1-3)')
             continue
         
